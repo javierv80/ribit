@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
   	if 
   	  user && user.authenticate(params[:password])
   	  session[:user_id] = user.id
-  	  redirect_to root_url, notice: "Logueado!"
+  	  redirect_to user, notice: "Logueado!"
   	else 
   		flash[:error] = "Nombre de usuario o password incorrectos"
   		redirect_to root_url
